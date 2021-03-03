@@ -1,13 +1,13 @@
 # Simple_Captcha
 
-##Usage
+## Usage
 To generate a captcha use the generate_captcha function:
 
 ```
 Captcha = generate_captcha(<Text>, <Custom Letter Map (Optional)>)
 ```
 
-##Example
+## Example
 
 ```
 import random
