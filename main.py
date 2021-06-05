@@ -124,14 +124,18 @@ def generate_captcha(phrase, map = LETTER_MAPS):
 
 
 # Example
-Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+def main():
+    Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
-text = random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet)
+    text = random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet)
 
-Captcha = generate_captcha(text)
-print(Captcha)
-input = input("\nEnter the phrase in the captcha: ")
-if input.upper() == text:
-    print("Login Successful")
-else:
-    print("Login Unsuccessful")
+    Captcha = generate_captcha(text)
+    print(Captcha)
+    input = input("\nEnter the phrase in the captcha: ")
+    if input.upper() == text:
+        print("Login Successful")
+    else:
+        print("Login Unsuccessful")
+
+if __name__ == '__main__':
+    main()
