@@ -1,4 +1,3 @@
-
 """
 /,'  ^1*  |\/!  l0  !    ]`_        /*`  /\   !Q  *]^   /`' 1.,l  /\
  _/  ,],  1  1  1   1,_  !.         \,. /*'\  !    !    \.. 1  1 /*`\
@@ -38,8 +37,6 @@ circles = [  # "O"
     'O', "@", "0", "Q",
 ]
 
-
-
 TYPE_MAPS = {
     "|": verticalLines,
     " ": empty,
@@ -52,8 +49,8 @@ TYPE_MAPS = {
 }
 
 LETTER_MAPS = {  # 2x4 grid
-    "A": [" ", "/", "\\" ," ",
-        "/", "`", "`", "\\"],
+    "A": [" ", "/", "\\", " ",
+          "/", "`", "`", "\\"],
     "B": [" ", "|", "O", " ",
           " ", "|", "O", " "],
     "C": [" ", "/", "`", "`",
@@ -68,9 +65,9 @@ LETTER_MAPS = {  # 2x4 grid
           "\\", "_", "_", "/"],
     "H": ["|", "_", "_", "|",
           "|", " ", " ", "|"],
-    "I": ["`", "|", "`", " ", # Alternative "_" [" ", "|", " ", " ", " ", "|", " ", " "],
+    "I": ["`", "|", "`", " ",  # Alternative "_" [" ", "|", " ", " ", " ", "|", " ", " "],
           "_", "|", "_", " "],
-    "J": [" ", " ", "|", " ", # Alternative "J" [" ", " ", "|", " ", "\\", "_", "/", " "],
+    "J": [" ", " ", "|", " ",  # Alternative "J" [" ", " ", "|", " ", "\\", "_", "/", " "],
           "\\", "_", "/", " "],
     "K": [" ", "|", "/", " ",
           " ", "|", "\\", " "],
@@ -108,7 +105,8 @@ LETTER_MAPS = {  # 2x4 grid
           " ", " ", " ", " "],
 }
 
-def generate_captcha(phrase, map = LETTER_MAPS):
+
+def generate_captcha(phrase, map=LETTER_MAPS):
     top = ""
     bottom = ""
     phrase = phrase.upper()
@@ -125,17 +123,19 @@ def generate_captcha(phrase, map = LETTER_MAPS):
 
 # Example
 def main():
-    Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
-    text = random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet) + random.choice(Alphabet)
+    text = random.choice(alphabet) + random.choice(alphabet) + random.choice(alphabet) + random.choice(
+        alphabet) + random.choice(alphabet)
 
-    Captcha = generate_captcha(text)
-    print(Captcha)
+    captcha = generate_captcha(text)
+    print(captcha)
     input = input("\nEnter the phrase in the captcha: ")
     if input.upper() == text:
         print("Login Successful")
     else:
         print("Login Unsuccessful")
+
 
 if __name__ == '__main__':
     main()
